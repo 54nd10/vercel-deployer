@@ -1,6 +1,6 @@
 {
   "name": "vercel-deployer",
-  "version": "0.0.1-canary.0",
+  "version": "0.0.1-canary.1",
   "description": "An opinionated way to deploy your projects to Vercel",
   "main": "./index.js",
   "bin": {
