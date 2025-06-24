@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "es2022",
@@ -8,13 +9,21 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
+    "noImplicitAny": true,
+
+    /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "module": "preserve",
+
+    /* If transpiling with TypeScript: */
+    "module": "NodeNext",
     "outDir": "dist",
     "sourceMap": true,
-    "declaration": true,
-    "lib": ["es2022"]
+    "rewriteRelativeImportExtensions": true,
+    "lib": ["ES2022"],
+
+    /* AND if you're building for a library: */
+    "declaration": true
   }
 }

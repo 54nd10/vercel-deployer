@@ -2,15 +2,16 @@
   "name": "vercel-deployer",
   "version": "0.0.1-canary.1",
   "description": "An opinionated way to deploy your projects to Vercel",
-  "main": "./index.js",
+  "main": "dist/index.js",
   "bin": {
-    "vercel-deployer": "./index.js"
+    "vercel-deployer": "./dist/index.js"
   },
+  "type": "module",
   "scripts": {
-    "build": "tsup && ./scripts/build/after.sh",
+    "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "biome lint --error-on-warnings ./ -c ./biome.json",
-    "format": "biome format --error-on-warnings ./ -c ./biome.json",
+    "lint": "biome lint --error-on-warnings ./",
+    "format": "biome format --error-on-warnings ./",
     "pub:canary": "pnpm run build && ./scripts/publish.sh --canary",
     "pub:release": "pnpm run build && ./scripts/publish.sh"
   },
