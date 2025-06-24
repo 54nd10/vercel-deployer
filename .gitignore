@@ -1,0 +1,13 @@
+**/bin/
+**/node_modules
+.turbo
+.env
+coverage
+dist
+
+.DS_Store
+.env.*
+!.env.example
+deployment-url.txt
+error.txt
+.vercel/*

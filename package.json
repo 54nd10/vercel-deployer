@@ -1,0 +1,29 @@
+{
+  "name": "vercel-deployer",
+  "version": "0.0.1",
+  "description": "An opinionated way to deploy your projects to Vercel",
+  "main": "./index.js",
+  "bin": {
+    "vercel-deployer": "./index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "biome lint --error-on-warnings ./ -c ./biome.json",
+    "format": "biome format --error-on-warnings ./ -c ./biome.json",
+    "pub:canary": "pnpm run build && ./scripts/publish.sh --canary",
+    "pub:release": "pnpm run build && ./scripts/publish.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.5",
+    "@types/node": "^24.0.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
+  }
+}
