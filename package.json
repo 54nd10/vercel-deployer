@@ -1,13 +1,13 @@
 {
   "name": "vercel-deployer",
-  "version": "0.0.1",
+  "version": "0.0.1-canary.0",
   "description": "An opinionated way to deploy your projects to Vercel",
   "main": "./index.js",
   "bin": {
     "vercel-deployer": "./index.js"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && ./scripts/build/after.sh",
     "dev": "tsup --watch",
     "lint": "biome lint --error-on-warnings ./ -c ./biome.json",
     "format": "biome format --error-on-warnings ./ -c ./biome.json",
