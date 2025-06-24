@@ -14,12 +14,12 @@ const options = program.opts();
 
 const [publicEnvironmentVariables, privateEnvironmentVariables] =
   options.environmentVariable?.reduce(
-    (acc, env) => {
+    (acc: string[][], env: string) => {
       const [key, value] = env.split("=");
-      if (key.startsWith("NEXT_PUBLIC_")) {
-        acc[0].push(`-b ${key}="${value}"`);
+      if (key?.startsWith("NEXT_PUBLIC_")) {
+        acc[0]?.push(`-b ${key}="${value}"`);
       } else {
-        acc[1].push(`-e ${key}="${value}"`);
+        acc[1]?.push(`-e ${key}="${value}"`);
       }
       return acc;
     },
