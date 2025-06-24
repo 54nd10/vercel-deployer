@@ -7,6 +7,7 @@ program.requiredOption("-s, --scope <scope>", "Vercel scope", process.env.VERCEL
 program.requiredOption("-t, --token <token>", "Vercel token to deploy", process.env.VERCEL_TOKEN);
 program.option("-e, --environmentVariable <environmentVariable...>", "Environment variable to deploy");
 program.option("-a, --alias <alias>", "Alias to deploy");
+program.option("-p, --prod", "Deploy to production");
 
 program.parse();
 
@@ -30,7 +31,8 @@ const cmd = `vercel deploy \
   --token ${options.token} \
   ${publicEnvironmentVariables ? publicEnvironmentVariables.join(" ") : ""} \
   ${privateEnvironmentVariables ? privateEnvironmentVariables.join(" ") : ""} \
-  -f`;
+  -f \
+  ${options.prod ? "--prod" : ""}`;
 
 const deploymentUrl = execSync(cmd).toString().trim();
 
